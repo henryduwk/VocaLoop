@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BookOpen, Home, Library, BarChart2, Sun, Moon } from 'lucide-react';
+import { SyncManager } from './SyncManager';
 
 export const Header: React.FC = () => {
   const location = useLocation();
@@ -53,6 +54,7 @@ export const Header: React.FC = () => {
                 );
               })}
             </nav>
+            <SyncManager />
             <button 
               onClick={() => setIsDark(!isDark)} 
               className="p-2 rounded-full text-slate-500 hover:bg-slate-100 transition-colors"

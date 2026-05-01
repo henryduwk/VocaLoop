@@ -11,6 +11,7 @@ export const getDecks = (): Deck[] => {
 
 export const saveDecks = (decks: Deck[]): void => {
   localStorage.setItem(DECKS_KEY, JSON.stringify(decks));
+  window.dispatchEvent(new Event('vocaloop-data-changed'));
 };
 
 export const getWords = (): Word[] => {
@@ -20,6 +21,7 @@ export const getWords = (): Word[] => {
 
 export const saveWords = (words: Word[]): void => {
   localStorage.setItem(WORDS_KEY, JSON.stringify(words));
+  window.dispatchEvent(new Event('vocaloop-data-changed'));
 };
 
 export const addDeck = (deck: Deck): void => {
